@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Page title & Fonts -->
+  
+  <title>Gallery - Tenue de Rêve</title>
+  <!-- Google Font for Logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/>
+
+  <!-- Internal Styling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      max-width: 1346px;
+      margin: 0 auto;
+    }
+
+    /* Navbar header styling */
+    header {
+      background-color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #f5cc68;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .logo a:hover {
+      text-decoration: underline;
+    }
+
+    /* Carousel Banner styles */
+    .hero-banner {
+      position: relative;
+      overflow: hidden;
+      height: 237px;
+      width: 100%;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-images {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.6);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 10;
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    /* Gallery Grid layout */
+    .gallery-grid {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+    }
+
+    .gallery-grid figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .thumb {
+      background-color: #ddd;
+      height: 200px;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #f5e4bc;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .footer-left p {
+      line-height: 1.6;
+    }
+
+    /* Navbar sections */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fdf8f1;
+      position: relative;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .header-left, .header-center, .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-center { justify-content: center; }
+    .header-right { justify-content: flex-end; }
+    .header-left { justify-content: flex-start; }
+
+    .menu-icons {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-left: 0;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      min-width: 180px;
+      z-index: 9999;
+    }
+
+    .dropdown-menu a {
+      padding: 8px 10px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f9f9f9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .user-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+
+    .user-icons a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navbar with logo and hamburger menu -->
+  <header class="header">
+    <div class="header-left">
+      <div class="menu-icons">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="dropdown-menu hidden" id="dropdown-menu">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Collections</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contacts</a>
+          <a href="shipping.html">Delivery Services</a>
+          <a href="shop.html">Products</a>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="logo">
+        <h1><center><a href="index.html">Tenue de Rêve</a></center></h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="user-icons">
+        <a class="search" href="search.html">🔍</a>
+        <a class="profile" href="login.html">👤</a>
+        <a class="cart" href="cart.html">🛒</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero image carousel -->
+  <section class="hero-banner">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="images/ban1.jpg" alt="Banner 1" height="230px" />
+        <img src="images/ban2.jpg" alt="Banner 2" height="230px" />
+        <img src="images/ban3.jpg" alt="Banner 3" height="230px" />
+      </div>
+      <button class="carousel-btn prev">❮</button>
+      <button class="carousel-btn next">❯</button>
+    </div>
+  </section>
+
+  <!-- Gallery Title -->
+  <p><b>OUR COLLECTIONS</b></p>
+
+  <!-- Image Gallery Section -->
+<section class="gallery-grid">
+  <figure>
+    <a href="images/summer.jpg" target="_blank">
+      <img src="images/summer.jpg" alt="summer collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Summer Collection</figcaption>
+  </figure>
+  <figure>
+    <a href="images/spring.jpg" target="_blank">
+      <img src="images/spring.jpg" alt="spring collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Spring Collection</figcaption>
+  </figure>
+  <figure>
+    <a href="images/fall.jpg" target="_blank">
+      <img src="images/fall.jpg" alt="fall collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Fall Collection</figcaption>
+  </figure>
+  <figure>
+    <a href="images/winter.jpg" target="_blank">
+      <img src="images/winter.jpg" alt="winter collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Winter Collection</figcaption>
+  </figure>
+  <figure>
+    <a href="images/desert.jpg" target="_blank">
+      <img src="images/desert.jpg" alt="desert collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Desert Special Edition</figcaption>
+  </figure>
+  <figure>
+    <a href="images/marine.jpg" target="_blank">
+      <img src="images/marine.jpg" alt="marine collection" class="thumb-img" width="300px">
+    </a>
+    <figcaption>Marine Special Edition</figcaption>
+  </figure>
+</section>
+
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-left">
+      <p>Tenue de Rêve<br/>
+        Pulchowk, Lalitpur<br/>
+        01-23xxxx<br/>
+        <a href="mailto:info.tenuedereve@gmail.com">info.tenuedereve@gmail.com</a>
+      </p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <a href="index.html">Home</a><br/>
+        <a href="about.html">About Us</a><br/>
+        <a href="contact.html">Contact Us</a><br/>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div>
+        <a href="shipping.html">Shipping</a><br/>
+        <a href="#">Returns</a><br/>
+        <a href="#">Exchanges</a><br/>
+        <a href="#">FAQs</a>
+      </div>
+      <div>
+        <strong>Our Socials</strong><br/>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a><br/>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a><br/>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a><br/>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carousel script for image transitions -->
+  <script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    }, 4000);
+  </script>
+
+  <!-- Dropdown menu toggle script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      if (menu) {
+        menu.classList.toggle("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
+

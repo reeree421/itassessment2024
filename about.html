@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About us_Tenue de Rêve</title>
+
+  <!-- External Stylesheet and Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <!-- Inline Styles for Layout and Page Sections -->
+  <style>
+    /* Global Layout */
+    body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* Header Elements */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fdf8f1;
+      position: relative;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .header-left, .header-center, .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-center { justify-content: center; }
+    .header-right { justify-content: flex-end; }
+    .header-left { justify-content: flex-start; }
+
+    .menu-icons {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      min-width: 180px;
+      z-index: 9999;
+    }
+
+    .dropdown-menu a {
+      padding: 8px 10px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f9f9f9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .user-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+
+    .user-icons a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo a {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #f5cc68;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .logo a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      width: 100%;
+      object-fit: cover;
+      height: 230px;
+      background-color: #ddd;
+      margin: 10px 0;
+    }
+
+    /* Story and Mission Grid */
+    .story-mission {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      align-items: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #555;
+      background-color: white;
+    }
+
+    .box.image {
+      border: none;
+      padding: 0;
+    }
+
+    .box.image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* Footer Layout */
+    footer {
+      background-color: #f5e4bc;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .footer-left p {
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar / Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="menu-icons">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div id="dropdown-menu" class="dropdown-menu hidden">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Collections</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contacts</a>
+          <a href="shipping.html">Delivery Services</a>
+          <a href="shop.html">Products</a>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="logo">
+        <h1><center><a href="index.html">Tenue de Rêve</a></center></h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="user-icons">
+        <a href="search.html" class="search">🔍</a>
+        <a href="login.html" class="profile">👤</a>
+        <a href="cart.html" class="cart">🛒</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-banner">
+    <img src="images/team.jpg" alt="team picture" style="width: 100%; height: 300px; object-fit: cover;">
+  </section>
+
+  <!-- Our Story and Mission Section -->
+  <section class="story-mission">
+    <div class="box text">
+      <h3>Our story</h3>
+      <p>
+        At Tenue de Rêve, we began with a dream to blend elegance with everyday wear.The french word "tenue" means attire and "reve" means dream hence "tenue de reve" meaning a dream attire.
+        Our goal has always been to make everyday fashion feel like our dream attire, empowering confidence with each outfit and living each day to the fullest.
+      </p>
+    </div>
+
+    <div class="box image">
+      <img src="images/cutouts.jpg" alt="Story Image" height="200px" />
+    </div>
+
+    <div class="box image">
+      <img src="images/quote.jpg" alt="Mission Image" height="200px" />
+    </div>
+
+    <div class="box text">
+      <h3>Our mission</h3>
+      <p>
+        We aim to redefine affordable and everchanging trendy fashion world through quality minimalism pieces and responsible sourcing being made in nepal,delivering cozy minimalistic yet sleek everyday style and sustainability through the fabrics we choose and the designs that make us feel comfortable yet powerful to perform the fullest.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <p>
+        Tenue de Rêve<br>
+        Pulchowk, Lalitpur<br>
+        01-23xxxx<br>
+        <a href="mailto:info.tenuedereve@gmail.com">info.tenuedereve@gmail.com</a>
+      </p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <a href="index.html">Home</a><br>
+        <a href="about.html">About Us</a><br>
+        <a href="contact.html">Contact Us</a><br>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div>
+        <a href="shipping.html">Shipping</a><br>
+        <a href="#">Returns</a><br>
+        <a href="#">Exchanges</a><br>
+        <a href="#">FAQs</a>
+      </div>
+      <div>
+        <strong>Our Socials</strong><br/>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a><br/>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a><br/>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a><br/>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dropdown Menu Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>

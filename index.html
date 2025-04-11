@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index_Tenue de Rêve</title>
+
+  <!-- External CSS and fonts for style and branding -->
+  <link rel="stylesheet" href="style12.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Inline CSS to style key layout components -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Roboto, sans-serif;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* Header layout: contains logo, nav menu, and icons */
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Left and right icon groups */
+    .menu-icons, .user-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 24px;
+    }
+
+    /* Logo styling */
+    .logo a {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #f5cc68;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .logo a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero carousel container */
+    .hero-banner {
+      position: relative;
+      overflow: hidden;
+      height: 237px;
+      width: 100%;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-images {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* Carousel navigation arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.6);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 10;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    /* Category icon section */
+    .categories {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+
+.category a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.category a:hover {
+  text-decoration: underline;
+}
+
+
+    .cat-img {
+      width: 70px;
+      height: 70px;
+      background-color: #ddd;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    /* SALE label and "view all" text */
+    .top-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .sale-btn {
+      padding: 5px 15px;
+      font-weight: bold;
+      background: #fff;
+      border: 2px solid green;
+      color: green;
+      font-size: 18px;
+    }
+
+    .view-all {
+      font-size: 16px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Product card grid layout */
+    .product-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      width: 200px;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .product-card del {
+      font-size: 14px;
+    }
+
+    .product-card .price {
+      color: red;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+a img {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+    .save {
+      background-color: #b8e7b8;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+
+    /* Footer styles with sections and links */
+    footer {
+      background-color: #f5e4bc;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .footer-left p {
+      line-height: 1.6;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header/Navbar with dropdown and icons -->
+  <header class="header">
+    <div class="header-left">
+      <div class="menu-icons">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div id="dropdown-menu" class="dropdown-menu hidden">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Collections</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contacts</a>
+          <a href="shipping.html">Delivery Services</a>
+          <a href="shop.html">Products</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="logo">
+        <h1><center><a href="index.html">Tenue de Rêve</a></center></h1>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="user-icons">
+        <a href="search.html" class="search">🔍</a>
+        <a href="login.html" class="profile">👤</a>
+        <a href="cart.html" class="cart">🛒</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero carousel section -->
+  <section class="hero-banner">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="images/image1.png" alt="Banner 1">
+        <img src="images/image2.png" alt="Banner 2">
+        <img src="images/image3.jpg" alt="Banner 3">
+      </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Category thumbnails -->
+  <section class="categories">
+    <div class="category">
+      <div class="cat-img">
+	<a href="dresses.html" target="_blank">
+	<img src="images/dresses.jpg" alt="Dresses" width="70px"></div>
+      <p>Dresses</p>
+    </div>
+    <div class="category">
+      <div class="cat-img">
+	<a href="tops.html" target="_blank">
+	<img src="images/tops.jpg" alt="Tops" width="70px"></div>
+      <p>Tops</p>
+    </div>
+    <div class="category">
+      <div class="cat-img">
+	<a href="outerwears.html" target="_blank">
+	<img src="images/outerwears.jpg" alt="Outerwears" width="70px"></div>
+      <p>Outerwears</p>
+    </div>
+    <div class="category">
+      <div class="cat-img">
+	<a href="basics.html" target="_blank">
+	<img src="images/basics.jpg" alt="Basics" width="68px"></div>
+      <p>Basics</p>
+    </div>
+    <div class="category">
+      <div class="cat-img">
+	<a href="bottoms.html" target="_blank">
+	<img src="images/bottoms.jpg" alt="Bottom" width="70px"></div>
+      <p>Bottom</p>
+    </div>
+    <div class="category">
+      <div class="cat-img">
+	<a href="coords.html" target="_blank">
+	<img src="images/coordsets.jpg" alt="Co-ord Sets" width="70px"></div>
+      <p>Co-ord Sets</p>
+    </div>
+  </section>
+
+  <!-- Sale items grid -->
+  <section class="sale-section">
+    <div class="top-labels">
+      <button class="sale-btn">SALE</button>
+      <a class="view-all" href="#">View all..</a>
+    </div>
+
+    <div class="product-container">
+      <div class="product-card">
+        <div class="product-img">
+	<a href="images/sale1.jpg" target="_blank">
+	<img src="images/sale1.jpg" alt="Product 1" width="200px"></div>
+        <p><del>Rs 1270</del> <span class="price">Rs 770</span></p>
+        <button class="save">Save 500</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+	<a href="images/sale2.jpg" target="_blank">
+	<img src="images/sale2.jpg" alt="Product 2" width="200px"></div>
+        <p><del>Rs 1400</del> <span class="price">Rs 900</span></p>
+        <button class="save">Save 500</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+	<a href="images/sale3.jpg" target="_blank">
+	<img src="images/sale3.jpg" alt="Product 3" width="200px"></div>
+        <p><del>Rs 1600</del> <span class="price">Rs 1200</span></p>
+        <button class="save">Save 400</button>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+	<a href="images/sale4.jpg" target="_blank">
+	<img src="images/sale4.jpg" alt="Product 4" width="200px"></div>
+        <p><del>Rs 1550</del> <span class="price">Rs 1150</span></p>
+        <button class="save">Save 400</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with company info and navigation links -->
+  <footer>
+    <div class="footer-left">
+      <p>
+        Tenue de Rêve<br>
+        Pulchowk , Lalitpur<br>
+        01-23xxxx<br>
+        <a href="mailto:info.tenuedereve@gmail.com">info.tenuedereve@gmail.com</a>
+      </p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <a href="index.html">Home</a><br>
+        <a href="about.html">About Us</a><br>
+        <a href="contact.html">Contact Us</a><br>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div>
+        <a href="shipping.html">Shipping</a><br>
+        <a href="#">Returns</a><br>
+        <a href="#">Exchanges</a><br>
+        <a href="#">FAQs</a>
+      </div>
+      <div>
+        <strong>Our Socials</strong><br>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a><br>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a><br>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a><br>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carousel functionality -->
+  <script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      carouselImages.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    }, 4000);
+  </script>
+
+  <!-- Dropdown menu toggle -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
