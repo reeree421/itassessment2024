@@ -394,7 +394,8 @@ a:hover {
     let currentIndex = 0;
 
     function updateCarousel() {
-      carouselImages.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
+      carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+
     }
 
     nextBtn.addEventListener('click', () => {
